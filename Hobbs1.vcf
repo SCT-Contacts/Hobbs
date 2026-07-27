@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:3.0
+PRODID:-//Apple Inc.//macOS 26.5.2//EN
+N:Hobbs;Vincent;;;
+FN:Cutthroat Security
+ORG:Cutthroat Security;
+TEL;type=pref:+1 (214) 235-9481
+X-ABShowAs:COMPANY
+END:VCARD
