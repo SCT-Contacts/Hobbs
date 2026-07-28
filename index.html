@@ -2,130 +2,268 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#111827">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#07090d">
+  <meta name="description" content="Cutthroat Security — serving Dallas–Fort Worth and Houston, Texas. Contact Vincent Hobbs.">
   <title>Cutthroat Security | Vincent Hobbs</title>
   <style>
     :root {
-      --bg: #080b12;
-      --card: rgba(17, 24, 39, .94);
-      --line: rgba(255,255,255,.12);
-      --text: #f8fafc;
-      --muted: #b6c0cf;
-      --accent: #d7a531;
-      --accent2: #f0cc69;
+      --panel: rgba(16,21,29,.9);
+      --text: #f7f8fa;
+      --muted: #aeb8c7;
+      --line: rgba(255,255,255,.11);
+      --gold: #d2a33d;
+      --gold-light: #f1d27d;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 24px;
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background:
-        radial-gradient(circle at 20% 10%, rgba(215,165,49,.16), transparent 35%),
-        radial-gradient(circle at 80% 90%, rgba(215,165,49,.10), transparent 35%),
-        linear-gradient(145deg, #05070c 0%, #111827 55%, #05070c 100%);
+        radial-gradient(circle at 10% 5%, rgba(210,163,61,.18), transparent 32%),
+        radial-gradient(circle at 90% 90%, rgba(210,163,61,.12), transparent 34%),
+        linear-gradient(145deg, #030406 0%, #0b0f15 48%, #05070a 100%);
+    }
+    .page {
+      width: min(100%, 520px);
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: max(20px, env(safe-area-inset-top)) 18px max(28px, env(safe-area-inset-bottom));
     }
     .card {
-      width: min(100%, 430px);
-      padding: 30px 24px 24px;
-      text-align: center;
-      border: 1px solid var(--line);
-      border-radius: 26px;
-      background: var(--card);
-      box-shadow: 0 28px 80px rgba(0,0,0,.5);
-      backdrop-filter: blur(14px);
-    }
-    .logo-wrap {
-      width: 160px;
-      height: 160px;
-      margin: 0 auto 20px;
-      padding: 8px;
-      display: grid;
-      place-items: center;
       overflow: hidden;
-      border-radius: 50%;
-      border: 2px solid var(--accent);
-      background: #fff;
-      box-shadow: 0 0 0 7px rgba(215,165,49,.10);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background: linear-gradient(180deg, rgba(18,24,33,.94), rgba(8,11,16,.96));
+      box-shadow: 0 28px 90px rgba(0,0,0,.56);
+      backdrop-filter: blur(18px);
     }
-    .logo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
+    .hero {
+      position: relative;
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 34px 24px 28px;
+      text-align: center;
+      background:
+        linear-gradient(to bottom, rgba(4,6,9,.08) 0%, rgba(4,6,9,.28) 44%, rgba(4,6,9,.96) 100%),
+        url("cutthroat-security-logo.jpg") center 18% / 245px auto no-repeat,
+        linear-gradient(135deg, #151b24 0%, #07090d 55%, #17120a 100%);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold-light);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .22em;
+      text-transform: uppercase;
     }
     h1 {
       margin: 0;
-      font-size: clamp(1.8rem, 7vw, 2.35rem);
-      letter-spacing: .02em;
+      font-size: clamp(2rem, 8vw, 2.75rem);
+      line-height: 1.02;
+      letter-spacing: -.035em;
     }
-    .name {
-      margin: 8px 0 0;
-      color: var(--accent2);
-      font-size: 1.15rem;
+    .owner {
+      margin: 12px 0 0;
+      color: #d9e0e9;
+      font-size: 1.12rem;
       font-weight: 700;
     }
-    .tagline {
-      margin: 12px auto 24px;
-      max-width: 320px;
-      color: var(--muted);
-      line-height: 1.55;
+    .coverage {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 18px;
     }
-    .buttons { display: grid; gap: 12px; }
-    .button {
-      min-height: 54px;
+    .pill {
+      padding: 9px 12px;
+      border: 1px solid rgba(210,163,61,.34);
+      border-radius: 999px;
+      color: var(--gold-light);
+      background: rgba(210,163,61,.08);
+      font-size: .82rem;
+      font-weight: 750;
+    }
+    .content { padding: 22px; }
+    .intro {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: .98rem;
+      line-height: 1.65;
+      text-align: center;
+    }
+    .actions { display: grid; gap: 12px; }
+    .btn {
+      min-height: 58px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 18px;
+      gap: 11px;
+      padding: 15px 18px;
       border: 1px solid var(--line);
-      border-radius: 15px;
+      border-radius: 17px;
       color: var(--text);
       text-decoration: none;
       font-size: 1rem;
-      font-weight: 750;
-      background: rgba(255,255,255,.055);
+      font-weight: 820;
+      background: rgba(255,255,255,.045);
+      cursor: pointer;
     }
-    .button.primary {
-      color: #15120a;
+    .btn.primary {
+      color: #171207;
       border-color: transparent;
-      background: linear-gradient(135deg, var(--accent2), var(--accent));
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      box-shadow: 0 12px 34px rgba(210,163,61,.22);
     }
-    .phone {
-      margin: 18px 0 0;
-      color: var(--muted);
-      font-size: .95rem;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
     }
-    footer {
+    .icon { width: 24px; height: 24px; flex: 0 0 24px; }
+    .details {
       margin-top: 22px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line);
-      color: #7f8b9b;
-      font-size: .78rem;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.028);
+    }
+    .detail-label {
+      margin: 0 0 5px;
+      color: #7f8b99;
+      font-size: .73rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .detail-value {
+      margin: 0;
+      color: #edf1f6;
+      font-size: 1.03rem;
+      font-weight: 700;
+    }
+    .detail-row + .detail-row {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.075);
+    }
+    .footer {
+      padding: 0 22px 23px;
+      color: #6f7a88;
+      text-align: center;
+      font-size: .76rem;
+      line-height: 1.5;
+    }
+    .share-note {
+      display: none;
+      margin: 12px 0 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .86rem;
+    }
+    @media (max-width: 370px) {
+      .grid-2 { grid-template-columns: 1fr; }
+      .hero { min-height: 390px; background-size: 215px auto; }
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="logo-wrap">
-      <img src="cutthroat-security-logo.jpg" alt="Cutthroat Security logo">
-    </div>
-    <h1>Cutthroat Security</h1>
-    <p class="name">Vincent Hobbs</p>
-    <p class="tagline">Tap below to save Vincent's contact information or get in touch directly.</p>
-    <div class="buttons">
-      <a class="button primary" href="vincent-hobbs.vcf">＋ Save Contact</a>
-      <a class="button" href="tel:+12142359481">☎ Call Vincent</a>
-      <a class="button" href="sms:+12142359481">✉ Send a Text</a>
-    </div>
-    <p class="phone">(214) 235-9481</p>
-    <footer>Cutthroat Security</footer>
+  <main class="page">
+    <section class="card">
+      <header class="hero">
+        <p class="eyebrow">Professional Security Contact</p>
+        <h1>Cutthroat Security</h1>
+        <p class="owner">Vincent Hobbs</p>
+        <div class="coverage">
+          <span class="pill">Dallas–Fort Worth</span>
+          <span class="pill">Houston</span>
+        </div>
+      </header>
+
+      <div class="content">
+        <p class="intro">
+          Serving clients throughout the Dallas–Fort Worth and Houston areas.
+          Save Vincent’s contact information or connect with him directly below.
+        </p>
+
+        <div class="actions">
+          <a class="btn primary" href="vincent-hobbs.vcf">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+            Save Contact
+          </a>
+
+          <div class="grid-2">
+            <a class="btn" href="tel:+12142359481">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8.5 4.5 6 3.8A2 2 0 0 0 3.6 5.3c-.7 3.1.7 6.8 3.9 10s6.9 4.6 10 3.9a2 2 0 0 0 1.5-2.4l-.7-2.5a2 2 0 0 0-2.4-1.4l-1.9.5a2 2 0 0 1-2-.6l-1.8-1.8a2 2 0 0 1-.6-2l.5-1.9a2 2 0 0 0-1.6-2.6Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Call
+            </a>
+
+            <a class="btn" href="sms:+12142359481">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 5.5h14a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-4.5 3v-3H5a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              Text
+            </a>
+          </div>
+
+          <button class="btn" id="shareButton" type="button">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 16V4m0 0L8 8m4-4 4 4M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+            </svg>
+            Share Contact Page
+          </button>
+          <p class="share-note" id="shareNote">Page link copied.</p>
+        </div>
+
+        <section class="details">
+          <div class="detail-row">
+            <p class="detail-label">Phone</p>
+            <p class="detail-value">(214) 235-9481</p>
+          </div>
+          <div class="detail-row">
+            <p class="detail-label">Coverage Area</p>
+            <p class="detail-value">Dallas–Fort Worth &amp; Houston, Texas</p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        Cutthroat Security<br>
+        Dallas–Fort Worth · Houston
+      </footer>
+    </section>
   </main>
+
+  <script>
+    const shareButton = document.getElementById("shareButton");
+    const shareNote = document.getElementById("shareNote");
+
+    shareButton.addEventListener("click", async () => {
+      const shareData = {
+        title: "Cutthroat Security | Vincent Hobbs",
+        text: "Contact Vincent Hobbs at Cutthroat Security.",
+        url: window.location.href
+      };
+
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(window.location.href);
+          shareNote.style.display = "block";
+          setTimeout(() => shareNote.style.display = "none", 2200);
+        }
+      } catch (error) {}
+    });
+  </script>
 </body>
-  
 </html>
