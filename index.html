@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <title>Cutthroat Security | Vincent Hobbs</title>
+  <style>
+    :root {
+      --bg: #080b12;
+      --card: rgba(17, 24, 39, .94);
+      --line: rgba(255,255,255,.12);
+      --text: #f8fafc;
+      --muted: #b6c0cf;
+      --accent: #d7a531;
+      --accent2: #f0cc69;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(215,165,49,.16), transparent 35%),
+        radial-gradient(circle at 80% 90%, rgba(215,165,49,.10), transparent 35%),
+        linear-gradient(145deg, #05070c 0%, #111827 55%, #05070c 100%);
+    }
+    .card {
+      width: min(100%, 430px);
+      padding: 30px 24px 24px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      background: var(--card);
+      box-shadow: 0 28px 80px rgba(0,0,0,.5);
+      backdrop-filter: blur(14px);
+    }
+    .logo-wrap {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 20px;
+      padding: 8px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: #fff;
+      box-shadow: 0 0 0 7px rgba(215,165,49,.10);
+    }
+    .logo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.8rem, 7vw, 2.35rem);
+      letter-spacing: .02em;
+    }
+    .name {
+      margin: 8px 0 0;
+      color: var(--accent2);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .tagline {
+      margin: 12px auto 24px;
+      max-width: 320px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+    .buttons { display: grid; gap: 12px; }
+    .button {
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 750;
+      background: rgba(255,255,255,.055);
+    }
+    .button.primary {
+      color: #15120a;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--accent2), var(--accent));
+    }
+    .phone {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+    footer {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #7f8b9b;
+      font-size: .78rem;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="logo-wrap">
+      <img src="cutthroat-security-logo.jpg" alt="Cutthroat Security logo">
+    </div>
+    <h1>Cutthroat Security</h1>
+    <p class="name">Vincent Hobbs</p>
+    <p class="tagline">Tap below to save Vincent's contact information or get in touch directly.</p>
+    <div class="buttons">
+      <a class="button primary" href="vincent-hobbs.vcf">＋ Save Contact</a>
+      <a class="button" href="tel:+12142359481">☎ Call Vincent</a>
+      <a class="button" href="sms:+12142359481">✉ Send a Text</a>
+    </div>
+    <p class="phone">(214) 235-9481</p>
+    <footer>Cutthroat Security</footer>
+  </main>
+</body>
+</html>
